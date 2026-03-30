@@ -312,8 +312,8 @@ def get_reviews(product: Optional[str] = None, sentiment: Optional[str] = None, 
 # Check multiple possible locations for the static dir
 _possible_static = [
     os.environ.get("STATIC_DIR", ""),
-    os.path.join(os.path.dirname(__file__), "..", "..", "frontend", "dist"),  # local dev
-    os.path.join(os.path.dirname(__file__), "..", "static"),  # Azure deploy
+    os.path.join(os.path.dirname(__file__), "..", "static"),  # Azure deploy / CI build
+    os.path.join(os.path.dirname(__file__), "..", "frontend", "dist"),  # local dev
 ]
 static_dir = None
 for _sd in _possible_static:

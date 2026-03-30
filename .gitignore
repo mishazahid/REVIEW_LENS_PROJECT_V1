@@ -2,7 +2,6 @@ node_modules/
 __pycache__/
 *.pyc
 .env
-backend/.env
 frontend/dist/
 .venv/
 *.egg-info/
@@ -10,3 +9,5 @@ dist/
 build/
 .pytest_cache/
 REVIEWLENSV1.PublishSettings
+deploy/
+deploy.zip

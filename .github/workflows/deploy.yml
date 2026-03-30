@@ -30,29 +30,20 @@ jobs:
       - name: Prepare deployment package
         run: |
           mkdir deploy
-
-          # Copy backend code
-          cp -r backend/app deploy/app
-          cp backend/requirements.txt deploy/requirements.txt
-          cp backend/data/sample_reviews.csv deploy/sample_reviews.csv
-
-          # Copy frontend build
+          cp -r app deploy/app
+          cp data/sample_reviews.csv deploy/sample_reviews.csv
           cp -r frontend/dist deploy/static
+          cp requirements.txt deploy/requirements.txt
+          cp application.py deploy/application.py
 
-          # Create startup script that installs deps at runtime
-          cat > deploy/startup.sh << 'SHELLEOF'
-          #!/bin/bash
-          echo "=== ReviewLens Startup ==="
-          cd /home/site/wwwroot
-          pip install -r requirements.txt 2>&1 | tail -5
-          python -m gunicorn app.main:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000 --timeout 120
-          SHELLEOF
-          sed -i 's/^          //' deploy/startup.sh
-          chmod +x deploy/startup.sh
+      - name: Zip deployment package
+        run: |
+          cd deploy
+          zip -r ../deploy.zip .
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: ${{ secrets.AZURE_APP_NAME }}
           publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
-          package: deploy
+          package: deploy.zip
