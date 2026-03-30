@@ -1,0 +1,13 @@
+{
+  "name": "review-lenss",
+  "version": "1.0.0",
+  "description": "LLM + ML Review Intelligence System",
+  "scripts": {
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "pip install -r backend/requirements.txt",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && python -m uvicorn app.main:app --host 0.0.0.0 --port 8000",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000"
+  }
+}

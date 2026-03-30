@@ -1,0 +1,51 @@
+id,name,reviews.rating,reviews.text,reviews.title,reviews.date,reviews.username
+1,Fire Tablet 7,5,"Absolutely love this tablet! The screen is bright and clear, battery lasts all day, and it's perfect for kids. Great value for the price.","Amazing tablet!",2024-01-15,john_doe
+2,Fire Tablet 7,4,"Good tablet for the price. The battery life is decent but could be better. Apps load quickly and the display is nice.","Good value",2024-01-18,sarah_m
+3,Fire Tablet 7,2,"Battery drains way too fast. After just 3 hours of use it dies. Very disappointed with the battery life. Screen is okay though.","Battery issues",2024-01-22,mike_r
+4,Fire Tablet 7,1,"Terrible product. Screen cracked after one week. Customer service was unhelpful. Would not recommend. Complete waste of money.","Awful quality",2024-02-01,angry_buyer
+5,Fire Tablet 7,3,"It's okay for basic use. Nothing special. The camera is terrible and storage is limited. Fine for reading and streaming.","Average tablet",2024-02-05,neutral_user
+6,Fire Tablet 7,5,"Kids love it! Parental controls are great and it's very durable. Dropped it several times and still works perfectly.","Perfect for kids",2024-02-10,parent123
+7,Fire Tablet 7,1,"Stopped working after 2 weeks. Won't turn on at all. Amazon refused to replace it. Terrible experience all around.","Dead on arrival",2024-02-15,unhappy_customer
+8,Fire Tablet 7,4,"Nice little tablet. Fast enough for everyday use. The Alexa integration is a nice bonus. Packaging was excellent.","Solid purchase",2024-02-20,tech_lover
+9,Fire Tablet 7,2,"The screen resolution is poor. Text looks blurry and videos don't look great. For the price I expected better display quality.","Poor display",2024-03-01,reviewer99
+10,Fire Tablet 7,5,"Best budget tablet on the market! Fast delivery, great packaging, and the tablet itself exceeds expectations. Battery is solid.","Exceeded expectations",2024-03-05,happy_shopper
+11,Echo Dot 4th Gen,5,"Amazing sound quality for such a small speaker. Alexa responds quickly and the setup was incredibly easy. Love it!","Great smart speaker",2024-01-10,music_fan
+12,Echo Dot 4th Gen,4,"Good sound, easy setup. Sometimes Alexa misunderstands commands but overall a solid smart speaker. Nice design too.","Solid speaker",2024-01-20,smart_home_guy
+13,Echo Dot 4th Gen,1,"Privacy nightmare. It's always listening. I returned it immediately. Also the sound quality was not as good as advertised.","Privacy concerns",2024-01-25,privacy_first
+14,Echo Dot 4th Gen,3,"Decent speaker for the price. Sound is okay but not great for music. Works well for alarms and timers. Delivery was fast.","It's okay",2024-02-01,casual_user
+15,Echo Dot 4th Gen,5,"Bought 3 of these for my house. Multi-room audio is fantastic. Setup was seamless and sound quality is impressive.","Love the multi-room",2024-02-08,audiophile
+16,Echo Dot 4th Gen,2,"Keeps disconnecting from WiFi. Very frustrating. Have to restart it multiple times a day. Not worth the hassle.","WiFi problems",2024-02-14,frustrated_user
+17,Echo Dot 4th Gen,4,"Great little device. Use it every day for music, weather, and controlling smart lights. Battery life on the portable version is good.","Daily driver",2024-02-22,daily_user
+18,Echo Dot 4th Gen,1,"Terrible sound quality. Sounds tinny and distorted at higher volumes. My old bluetooth speaker sounds 10x better.","Bad sound",2024-03-01,sound_critic
+19,Echo Dot 4th Gen,5,"Perfect gift! My mom loves it. She uses it for music, audiobooks, and calling family. Very user friendly for seniors.","Great for seniors",2024-03-10,gift_giver
+20,Echo Dot 4th Gen,3,"It works but nothing spectacular. Alexa is helpful sometimes but often gives wrong answers. Packaging was nice though.","Mixed feelings",2024-03-15,on_the_fence
+21,Kindle Paperwhite,5,"Best e-reader ever! The backlight is perfect for night reading. Battery lasts weeks. Waterproof design is a game changer.","Love my Kindle",2024-01-05,bookworm
+22,Kindle Paperwhite,5,"Crystal clear display, lightweight, and the battery is incredible. I read for hours without any eye strain. Highly recommend.","Perfect for readers",2024-01-12,avid_reader
+23,Kindle Paperwhite,4,"Great device for reading. Only downside is the slow page turns sometimes. Otherwise perfect. Delivery was super fast.","Almost perfect",2024-01-20,speed_reader
+24,Kindle Paperwhite,2,"Screen froze twice in the first week. Had to do a hard reset. Also the touch screen is not very responsive.","Screen issues",2024-02-02,frustrated_reader
+25,Kindle Paperwhite,1,"Received a defective unit. Screen had dead pixels. Return process was a nightmare. Very poor quality control.","Defective product",2024-02-10,returns_dept
+26,Kindle Paperwhite,5,"Upgraded from the basic Kindle and what a difference! The warm light feature is amazing. Reading at night is so comfortable.","Worth the upgrade",2024-02-18,kindle_fan
+27,Kindle Paperwhite,3,"Good e-reader but overpriced. You can get similar functionality from cheaper alternatives. The locked ecosystem is annoying.","Overpriced",2024-02-25,budget_shopper
+28,Kindle Paperwhite,4,"Lightweight and easy to hold. The anti-glare screen works great outdoors. Battery life is as advertised. Very happy.","Great for travel",2024-03-05,traveler
+29,Kindle Paperwhite,2,"Ads on a paid device are unacceptable. Even the ad-free version still pushes Amazon recommendations. Frustrating experience.","Too many ads",2024-03-12,ad_hater
+30,Kindle Paperwhite,5,"Third Kindle I've owned and the best one yet. The storage is enough for thousands of books. Fast and responsive.","Best Kindle yet",2024-03-20,loyal_customer
+31,Fire TV Stick 4K,5,"Transforms any TV into a smart TV. Streaming is smooth, picture quality is excellent, and the remote is very responsive.","Must have device",2024-01-08,cord_cutter
+32,Fire TV Stick 4K,4,"Good streaming device. Loads apps quickly and 4K quality is great. Interface could be less cluttered with ads though.","Good but ads",2024-01-16,streamer
+33,Fire TV Stick 4K,2,"Keeps buffering even with fast internet. Very annoying during movies. Had to restart it constantly. Poor performance.","Constant buffering",2024-01-28,movie_buff
+34,Fire TV Stick 4K,1,"Remote stopped working after a month. Replacement remote was also defective. Very poor build quality on the remote.","Remote broke",2024-02-05,remote_issues
+35,Fire TV Stick 4K,5,"Best streaming stick I've used. Voice search with Alexa is amazing. Setup took 5 minutes. Highly recommended!","Excellent product",2024-02-12,tech_reviewer
+36,Fire TV Stick 4K,3,"Decent but not the best. Roku has a better interface. Too many Amazon ads and promotions pushed to the home screen.","Too many ads",2024-02-20,comparison_shopper
+37,Fire TV Stick 4K,4,"Great picture quality in 4K. Works well with all major streaming apps. Delivery was fast and packaging was secure.","Great 4K quality",2024-03-01,quality_viewer
+38,Fire TV Stick 4K,2,"Overheats after extended use. Gets very hot to the touch. Worried about fire safety. Also the WiFi connection drops frequently.","Overheating issue",2024-03-08,safety_first
+39,Fire TV Stick 4K,5,"Bought this as a gift and now buying one for myself. The Dolby Atmos support is fantastic. Incredible value for money.","Amazing value",2024-03-15,gift_buyer
+40,Fire TV Stick 4K,1,"Bricked after a software update. Won't turn on, won't reset. Complete waste of money. Amazon's updates ruined my device.","Software bricked it",2024-03-22,bricked_device
+41,Fire Tablet 7,3,"Okay for kids but not for adults. Too slow for any serious use. The app store is very limited compared to iPad.","Kids only",2024-03-10,honest_review
+42,Fire Tablet 7,4,"Surprisingly good for the price. Watched movies on a long flight and it held up well. Battery lasted the entire trip.","Good for travel",2024-03-15,frequent_flyer
+43,Echo Dot 4th Gen,4,"Second one I've bought. Use it as an alarm clock and smart home hub. Very reliable and great sound for its size.","Reliable device",2024-03-20,repeat_buyer
+44,Echo Dot 4th Gen,2,"The microphone barely picks up my voice unless I'm right next to it. Useless for across-the-room commands.","Poor microphone",2024-03-25,voice_user
+45,Kindle Paperwhite,4,"Fantastic for vacation reading. Took it to the beach and the waterproof feature saved it. Screen is easy on the eyes.","Beach proof!",2024-03-18,beach_reader
+46,Kindle Paperwhite,1,"Battery died completely after 6 months. Won't charge at all. Very disappointing for the premium price. Poor durability.","Battery dead",2024-03-25,short_lived
+47,Fire TV Stick 4K,4,"Smooth streaming experience. The voice remote is a game changer for searching content. Setup was plug and play easy.","Easy setup",2024-03-18,easy_user
+48,Fire TV Stick 4K,3,"Works fine but gets slow after a few months. Need to clear cache regularly. The storage is very limited.","Gets slow over time",2024-03-25,long_term_user
+49,Fire Tablet 7,1,"Delivery was delayed by 2 weeks. When it finally arrived the box was damaged and the screen was cracked. Terrible.","Damaged on arrival",2024-03-28,bad_delivery
+50,Echo Dot 4th Gen,5,"Incredible little device! Controls all my smart home devices perfectly. The sound quality has improved so much from gen 3.","Smart home essential",2024-03-28,smart_home_pro
