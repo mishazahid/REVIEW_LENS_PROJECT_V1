@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Read(//c/Users/user/AppData/Local/Temp/claude/c--Users-user-Desktop-review-lenss/754d827e-019a-4c4e-af7c-1fa2e40445b3/tasks/**)",
+      "Bash(curl -s -X POST http://127.0.0.1:8000/api/load-sample)",
+      "Bash(curl -s -X POST http://127.0.0.1:8000/api/analyze)",
+      "Bash(curl -s http://127.0.0.1:8000/api/dashboard)",
+      "Bash(taskkill //F //IM uvicorn.exe)",
+      "Bash(pkill -f uvicorn)",
+      "Bash(curl -s http://127.0.0.1:8000/api/health)",
+      "Read(//c/Users/user/Downloads/**)",
+      "Bash(curl -s -X POST http://127.0.0.1:8000/api/upload -F \"file=@/c/Users/user/Desktop/review-lenss/backend/data/sample_reviews.csv\")",
+      "Bash(tasklist)",
+      "Bash(git init:*)",
+      "Bash(git remote:*)",
+      "Bash(git status:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(gh run:*)",
+      "Bash(git pull:*)",
+      "Bash(git add:*)",
+      "Bash(winget install:*)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\user\\Desktop"
+    ]
+  }
+}
