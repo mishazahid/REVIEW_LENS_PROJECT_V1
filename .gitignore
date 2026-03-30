@@ -9,3 +9,4 @@ frontend/dist/
 dist/
 build/
 .pytest_cache/
+REVIEWLENSV1.PublishSettings
