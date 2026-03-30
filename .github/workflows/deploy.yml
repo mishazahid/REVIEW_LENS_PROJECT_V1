@@ -25,13 +25,6 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Create venv and install Python dependencies
-        run: |
-          python -m venv antenv
-          source antenv/bin/activate
-          pip install -r backend/requirements.txt
-          pip install gunicorn
-
       - name: Build React frontend
         working-directory: frontend
         run: |
@@ -39,9 +32,35 @@ jobs:
           npm install
           npm run build
 
+      - name: Prepare deployment package
+        run: |
+          mkdir -p deploy/app
+          mkdir -p deploy/static
+
+          # Copy backend
+          cp -r backend/app/* deploy/app/
+          cp backend/requirements.txt deploy/requirements.txt
+          cp backend/data/sample_reviews.csv deploy/sample_reviews.csv
+
+          # Copy frontend build
+          cp -r frontend/dist deploy/static/
+
+          # Create the main entry point at root level
+          cat > deploy/main.py << 'PYEOF'
+          import os
+          import sys
+          sys.path.insert(0, os.path.dirname(__file__))
+          os.environ.setdefault("SAMPLE_DATA_PATH", os.path.join(os.path.dirname(__file__), "sample_reviews.csv"))
+          os.environ.setdefault("STATIC_DIR", os.path.join(os.path.dirname(__file__), "static"))
+          from app.main import app
+          PYEOF
+
+          # Remove leading spaces from heredoc
+          sed -i 's/^          //' deploy/main.py
+
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: ${{ secrets.AZURE_APP_NAME }}
           publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
-          package: .
+          package: deploy

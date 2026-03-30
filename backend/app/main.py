@@ -85,8 +85,18 @@ async def upload_dataset(file: UploadFile = File(...)):
 @app.post("/api/load-sample")
 def load_sample_dataset():
     """Load the built-in sample dataset."""
-    sample_path = os.path.join(os.path.dirname(__file__), "..", "data", "sample_reviews.csv")
-    if not os.path.exists(sample_path):
+    # Check multiple possible locations
+    possible_paths = [
+        os.path.join(os.path.dirname(__file__), "..", "data", "sample_reviews.csv"),  # local dev
+        os.path.join(os.path.dirname(__file__), "..", "sample_reviews.csv"),  # Azure deploy
+        os.environ.get("SAMPLE_DATA_PATH", ""),  # env override
+    ]
+    sample_path = None
+    for p in possible_paths:
+        if p and os.path.exists(p):
+            sample_path = p
+            break
+    if not sample_path:
         raise HTTPException(status_code=404, detail="Sample dataset not found")
 
     df = processor.load_csv(sample_path)
@@ -299,8 +309,19 @@ def get_reviews(product: Optional[str] = None, sentiment: Optional[str] = None, 
 
 
 # Serve React static files in production
-static_dir = os.path.join(os.path.dirname(__file__), "..", "..", "frontend", "dist")
-if os.path.exists(static_dir):
+# Check multiple possible locations for the static dir
+_possible_static = [
+    os.environ.get("STATIC_DIR", ""),
+    os.path.join(os.path.dirname(__file__), "..", "..", "frontend", "dist"),  # local dev
+    os.path.join(os.path.dirname(__file__), "..", "static"),  # Azure deploy
+]
+static_dir = None
+for _sd in _possible_static:
+    if _sd and os.path.exists(_sd):
+        static_dir = _sd
+        break
+
+if static_dir:
     app.mount("/assets", StaticFiles(directory=os.path.join(static_dir, "assets")), name="assets")
 
     @app.get("/{full_path:path}")
