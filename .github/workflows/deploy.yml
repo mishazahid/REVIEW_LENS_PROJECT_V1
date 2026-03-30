@@ -15,11 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python 3.10
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
       - name: Set up Node.js 20
         uses: actions/setup-node@v4
         with:
@@ -34,29 +29,26 @@ jobs:
 
       - name: Prepare deployment package
         run: |
-          mkdir -p deploy/app
-          mkdir -p deploy/static
+          mkdir deploy
 
-          # Copy backend
-          cp -r backend/app/* deploy/app/
+          # Copy backend code
+          cp -r backend/app deploy/app
           cp backend/requirements.txt deploy/requirements.txt
           cp backend/data/sample_reviews.csv deploy/sample_reviews.csv
 
           # Copy frontend build
-          cp -r frontend/dist deploy/static/
+          cp -r frontend/dist deploy/static
 
-          # Create the main entry point at root level
-          cat > deploy/main.py << 'PYEOF'
-          import os
-          import sys
-          sys.path.insert(0, os.path.dirname(__file__))
-          os.environ.setdefault("SAMPLE_DATA_PATH", os.path.join(os.path.dirname(__file__), "sample_reviews.csv"))
-          os.environ.setdefault("STATIC_DIR", os.path.join(os.path.dirname(__file__), "static"))
-          from app.main import app
-          PYEOF
-
-          # Remove leading spaces from heredoc
-          sed -i 's/^          //' deploy/main.py
+          # Create startup script that installs deps at runtime
+          cat > deploy/startup.sh << 'SHELLEOF'
+          #!/bin/bash
+          echo "=== ReviewLens Startup ==="
+          cd /home/site/wwwroot
+          pip install -r requirements.txt 2>&1 | tail -5
+          python -m gunicorn app.main:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000 --timeout 120
+          SHELLEOF
+          sed -i 's/^          //' deploy/startup.sh
+          chmod +x deploy/startup.sh
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
